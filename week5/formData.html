@@ -1,0 +1,19 @@
+<script>
+    var formData = new FormData();
+    formData.append('name', 'parkjisung');
+    formData.append('item', 'buggie');
+    formData.append('item', 'soccer');
+    formData.has('item'); // item에 값이 들어가 있느냐 true 응답
+    formData.has('money'); // money라는 속성명에 값이 있느냐 false 응답
+    formData.get('item');
+    formData.getAll('item');
+    console.log(formData.getAll('item'));
+    formData.append('test', ['hi', 'zero']);
+    console.log(formData.getAll('test'));
+    formData.get('test');
+    formData.delete('test');
+    formData.get('test');
+    formData.set('item', 'apple'); // 기존 item 안의 값 삭제 후 apple 추가
+    formData.getAll('item');
+    console.log(formData.getAll('name'));
+</script>

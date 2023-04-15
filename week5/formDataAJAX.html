@@ -1,0 +1,22 @@
+<script>
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+    formData.append('name', 'parkjisung');
+    formData.append('birth', '1981');
+    xhr.onreadystatechange = function() {
+        // 요청에 대한 콜백
+        if(xhr.readyState=== xhr.DONE) {
+            // 요청이 완료되면
+            if(xhr.status ===200 || xhr.status ===201) {
+                //서버 접속에 성공하면
+                console.log(xhr.responseText);
+                //서버에서 보내주는 값
+            }
+            else {
+                console.error(xhr.responseText);
+            }
+        }
+    };
+    xhr.open('POST', 'https://www.zerocho.com/api/post/formdata'); // POST 요청 사용
+    xhr.send(formData); // data객체를 JSON형식으로 변환하여 서버에 전송
+</script>
